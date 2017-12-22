@@ -28,7 +28,7 @@ CREATE TABLE [dbo].[user]
  [lastblog]    DATETIME NOT NULL ,
  [firstblog]   DATETIME NOT NULL ,
  [accountdate] DATETIME NOT NULL ,
- [discription] VARCHAR(250) NOT NULL ,
+ [description] VARCHAR(250) NOT NULL ,
  [active]      TINYINT NOT NULL ,
  [password]    VARCHAR(255) NOT NULL ,
 
