@@ -34,8 +34,10 @@ ul {
   padding: 0;
 }
 .ww {
-  margin: 110 ;
+  margin: 110;
   padding: 10;
+  font-size: 12pt;
+
 }
 /* Style the topnav links */
 .cl_topmenu li {
@@ -96,4 +98,7 @@ ul {
 }
 .cl_submit:hover {
     background-color: #43a09d;
+}
+.error {
+  color: #FF0000;
 }

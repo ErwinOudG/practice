@@ -1,6 +1,8 @@
 <?php
 // Start the session
-session_start();
+if(!isset($_SESSION)){
+  session_start();
+}
 ?>
 <?php
 ini_set('display_errors', 'On');
@@ -8,7 +10,7 @@ error_reporting(E_ALL | E_STRICT);
 include "./php/dbvars.php";
 $ar_menuitemname = array();
 // Create connection
-$conn =  mysqli_connect($servername, $username, $password);
+$conn =  mysqli_connect($servername, $dbusername, $dbpassword);
 
 // Check connection
 if (!$conn) {
@@ -51,9 +53,12 @@ if ($arrlength>0) {
         echo '<br><p class="cl_centre">';
         echo 'Erwin '.$ar_menuitemname[$x];
         echo '</p><br>';
-        echo '<br><p>';
-        include('pw.php');
-        echo '</p><br>';
+        $filetest = "$ar_menuitemname[$x].php"
+        if (file_exists($filetest)) {
+          echo '<br><p>';
+          include($filetest);
+          echo '</p><br>';
+        }
         echo '</div>';
     }
 }

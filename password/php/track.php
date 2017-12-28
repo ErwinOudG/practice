@@ -1,4 +1,7 @@
 <?php
+if(!isset($_SESSION)){
+  session_start();
+}
 include "./php/dbvars.php";
 $subdomainname = "erwin";
 $gm_date = gmdate("Y m d h:i:s");
@@ -21,7 +24,7 @@ $seperate = ",";
   fclose($myfile);
 
 // Create connection
-$conn =  mysqli_connect($servername, $username, $password);
+$conn =  mysqli_connect($servername, $dbusername, $dbpassword);
 
 // Check connection
 if (!$conn) {

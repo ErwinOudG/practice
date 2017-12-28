@@ -1,6 +1,8 @@
 <?php
 // Start the session
-session_start();
+if(!isset($_SESSION)){
+  session_start();
+}
 function test_input($data) {
   $data = trim($data);
   $data = stripslashes($data);

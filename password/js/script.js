@@ -11,18 +11,18 @@
 
 // this snippet scrolls slowly to id (hash)
 // future addon animate switch
-$(document).ready(function(){
-  $("a").on('click', function(event) {
-    if (this.hash !== "") {
-      event.preventDefault();
-      var idHash = this.hash;
-      $('html, body').animate({
-          scrollTop: $(idHash).offset().top
-            }, 1000, function(){
-        window.location.hash = idHash;
-      });
-    }
-  });
-});
-
-// document.getElementById("id_tag1").innerHTML = ;
+$(function() {
+     // Smooth Scrolling
+     $('a[href*="#"]:not([href="#"])').click(function() {
+       if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+         var target = $(this.hash);
+         target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+         if (target.length) {
+           $('html, body').animate({
+             scrollTop: target.offset().top-50
+           }, 1000);
+           return false;
+         }
+       }
+     });
+   });
