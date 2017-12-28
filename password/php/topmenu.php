@@ -1,4 +1,8 @@
 <?php
+// Start the session
+session_start();
+?>
+<?php
 ini_set('display_errors', 'On');
 error_reporting(E_ALL | E_STRICT);
 include "./php/dbvars.php";
@@ -41,7 +45,16 @@ if ($arrlength>0) {
 // generate div's from array
     for($x=0;$x<$arrlength;$x++)
     {
-        echo '<div id="id'.$ar_menuitemname[$x]. '" class="cl_title_mid">'.$ar_menuitemname[$x].'<br><p class="cl_centre">Erwin '.$ar_menuitemname[$x].'</p><br></div>';
+      // $menucontent = "&lt?php include('pw.php'); ?&gt";
+        echo '<div id="id'.$ar_menuitemname[$x]. '" class="cl_title_mid">';
+        echo $ar_menuitemname[$x];
+        echo '<br><p class="cl_centre">';
+        echo 'Erwin '.$ar_menuitemname[$x];
+        echo '</p><br>';
+        echo '<br><p>';
+        include('pw.php');
+        echo '</p><br>';
+        echo '</div>';
     }
 }
 else {
