@@ -9,4 +9,10 @@ function test_input($data) {
   $data = htmlspecialchars($data);
   return $data;
 }
+function console_log($data){
+  echo '<script>';
+  echo 'console.log('. json_encode( $data ) .')';
+  echo '</script>';
+}
+
 ?>

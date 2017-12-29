@@ -3,8 +3,8 @@
 if(!isset($_SESSION)){
   session_start();
 }
-?>
-<?php
+require_once("./php/funclib.php");
+
 ini_set('display_errors', 'On');
 error_reporting(E_ALL | E_STRICT);
 include "./php/dbvars.php";
@@ -53,7 +53,8 @@ if ($arrlength>0) {
         echo '<br><p class="cl_centre">';
         echo 'Erwin '.$ar_menuitemname[$x];
         echo '</p><br>';
-        $filetest = "$ar_menuitemname[$x].php"
+        $filetest = "./php/$ar_menuitemname[$x].php";
+        console_log($filetest);
         if (file_exists($filetest)) {
           echo '<br><p>';
           include($filetest);
