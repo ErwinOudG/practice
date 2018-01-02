@@ -23,11 +23,11 @@ $_SESSION["namekeep"] = "";
 <div class="ww">
   <p><span class="error">* required field.</span></p>
   <form action="./php/ww_action.php" method="post">
-    Naam: <input name="username" type="text" placeholder="Uw naam.." value="<?php echo  $_SESSION["namekeep"];?>">
+    <input name="username" type="text" placeholder="Uw naam.." value="<?php echo  $_SESSION["namekeep"];?>">
     <span class="error">* <?php echo $_SESSION["nameErr"];?></span><br/><br/>
-    Wachtwoord: <input name="userpw1" type="password" placeholder="Uw wachtwoord.." >
+    <input name="userpw1" type="password" placeholder="Uw wachtwoord.." >
     <span class="error">* <?php echo $_SESSION["pwErr1"];?></span><br/><br/>
-    Herhaal wachtwoord: <input name="userpw2" type="password" placeholder="herhaal Uw wachtwoord.." >
+    <input name="userpw2" type="password" placeholder="herhaal Uw wachtwoord.." >
     <span class="error">* <?php echo $_SESSION["pwErr2"];?></span><br/><br/>
     <input class="cl_submit" type="submit" value="Verstuur" />
   </form>

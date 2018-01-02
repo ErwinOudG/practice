@@ -8,6 +8,7 @@ if(!isset($_SESSION)){
 <!-- Portfolio voor codegorilla -->
 <!-- Portfolio van en door Erwin Oudgenoeg  -->
 <!-- copyrights  E.A. Oudgenoeg-->
+<!-- with the help from: w3schools,  and all the others that I did forget (i'll try to add them )-->
 
 <html lang="nl">
     <head>

@@ -58,6 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           VALUES ('".$username."', '".$hashje."');";
           if ($mysqli->query($sql) === TRUE) {
             $_SESSION["suc6"] = "New record $username created for successfully with hash $hashje";
+            $_SESSION["namekeep"] = "";
           } else {
             $_SESSION["suc6"] = "Error: " . $sql . "<br>" . $mysqli->error;
           }
