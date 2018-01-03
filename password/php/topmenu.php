@@ -17,10 +17,10 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-$sql = ("SELECT menu_item_name
-        FROM u12893p9221_fgb.fgb_menu_items
-        WHERE menu_name = 'Top'
-        ORDER BY menu_order")
+$sql = ("SELECT itemname
+        FROM $dbmenuitem
+        WHERE menuid = 2
+        ORDER BY itemorder")
         ;
 $result = $conn->query($sql);
 

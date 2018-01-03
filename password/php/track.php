@@ -20,6 +20,8 @@ $seperate = ",";
     fwrite($myfile, $_SERVER['REMOTE_PORT']);
     fwrite($myfile, $seperate);
     fwrite($myfile, $subdomainname);
+    fwrite($myfile, $seperate);
+    fwrite($myfile, session_id());
     fwrite($myfile, "\n");
   fclose($myfile);
 

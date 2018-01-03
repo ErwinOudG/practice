@@ -1,7 +1,8 @@
 <?php
 $servername = "localhost";
-$dbusername = "u12893p9221_fgb";
-$dbpassword = "FGBw8w";
-$database = "u12893p9221_fgb.fgb_log";
-$dbmenuitem = "u12893p9221_fgb.fgb_menu_items";
+$dbusername = "u12893p9221_pf";
+$dbpassword = "PortfolioEAO";
+$database = "u12893p9221_portfolio";
+$dbmenuitem = "u12893p9221_portfolio.menuitems";
+$sessiondb = "u12893p9221_portfolio.session";
 ?>

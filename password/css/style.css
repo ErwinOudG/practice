@@ -13,6 +13,51 @@ ul {
     margin: 0;
     padding: 0;
 }
+
+input[type=text] {
+    /*width: 100%;*/
+    width: 200px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+input[type=email] {
+    /*width: 100%;*/
+    width: 200px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+input[type=password] {
+    width: 200px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.cl_submit {
+    width: 200px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    background-color: #11c61d;
+    /*padding: 12px 45px;*/
+    border: 2px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    color: black;
+    /*border: none;*/
+    /*outline: none;*/
+    /*margin: 0;*/
+    font-weight: bold;
+}
+
 .cl_topmenu {
     z-index: 1000;
     position: fixed;
@@ -72,7 +117,7 @@ ul {
     text-align: center;
 /*    color: white;*/
     font-size: 30pt;
-    text-shadow: 5px 2px 4px black;
+    /*text-shadow: 5px 2px 4px black;*/
 }
 .cl_title_mid_hid{
     height: 50px;
@@ -84,17 +129,6 @@ ul {
       -webkit-flex-direction: column;
       flex-direction: column;
     }
-}
-.cl_submit {
-    background-color: #11c61d;
-    padding: 12px 45px;
-    border-radius: 5px;
-    cursor: pointer;
-    color: black;
-    border: none;
-    outline: none;
-    margin: 0;
-    font-weight: bold;
 }
 .cl_submit:hover {
     background-color: #0ad317;

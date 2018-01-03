@@ -4,11 +4,10 @@ if(!isset($_SESSION)){
   session_start();
 }
 if (!isset($_SESSION["suc6"])) {
-$_SESSION["nameErr"] = "";
-$_SESSION["pwErr1"] = "";
-$_SESSION["pwErr2"] = "";
+$_SESSION["Err"] = "";
 $_SESSION["suc6"] = "";
 $_SESSION["namekeep"] = "";
+$_SESSION["mailkeep"] = "";
 }
 // if (!isset($_SESSION["nameErr"]) && !isset($_SESSION["Err1"]) && !isset($_SESSION["nameErr"])) {
   console_log($_SESSION["namekeep"]);
@@ -23,16 +22,26 @@ $_SESSION["namekeep"] = "";
 <div class="ww">
   <p><span class="error">* required field.</span></p>
   <form action="./php/ww_action.php" method="post">
-    <input name="username" type="text" placeholder="Uw naam.." value="<?php echo  $_SESSION["namekeep"];?>">
-    <span class="error">* <?php echo $_SESSION["nameErr"];?></span><br/><br/>
+    <input name="username" type="text" autofocus  title="Mag alleen uit karakters en spaties bestaan" placeholder="Uw naam.." value="<?php echo  $_SESSION["namekeep"];?>">
+    <span class="error">*</span><br/>
+    <input name="emailaddr" type="text"  title="naam@voorbeeld.nl" placeholder="Uw E-mail adres.." value="<?php echo  $_SESSION["mailkeep"];?>">
+    <span class="error">*</span><br/>
     <input name="userpw1" type="password" placeholder="Uw wachtwoord.." >
-    <span class="error">* <?php echo $_SESSION["pwErr1"];?></span><br/><br/>
+    <span class="error">*</span><br/>
     <input name="userpw2" type="password" placeholder="herhaal Uw wachtwoord.." >
-    <span class="error">* <?php echo $_SESSION["pwErr2"];?></span><br/><br/>
+    <span class="error">*</span><br/>
     <input class="cl_submit" type="submit" value="Verstuur" />
+    <span hidden>*</span>
   </form>
   <?php
-  echo "<br>";
-  echo $_SESSION["suc6"];
+  if (isset($_SESSION["Err"])) {
+    echo "<br><span class='error'> ";
+    echo $_SESSION["Err"];
+    echo "</span>";
+  }
+  if (isset($_SESSION["suc6"])) {
+    echo "<br>";
+    echo $_SESSION["suc6"];
+  }
   ?>
 </div>
