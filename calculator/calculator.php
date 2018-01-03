@@ -1,0 +1,33 @@
+<?php
+include_once("calculator.class.php");
+$waarde1 = 12;
+$waarde2 = 6;
+$myCalc = new Calculator($waarde1,$waarde2);
+echo "waarde 1 = $waarde1";
+echo "<br>";
+echo "waarde 2 = $waarde2";
+echo "<br> add : ";
+echo $myCalc->add();
+echo "<br> subtract : ";
+echo $myCalc->subtract();
+echo "<br> multiply : ";
+echo $myCalc->multiply();
+echo "<br> divide : ";
+echo $myCalc->divide();
+echo "<br> ---------------- <br>";
+$waarde1 = 2;
+$waarde2 = 0;
+$myCalc = new Calculator($waarde1,$waarde2);
+echo "waarde 1 = $waarde1";
+echo "<br>";
+echo "waarde 2 = $waarde2";
+echo "<br> add : ";
+echo $myCalc->add();
+echo "<br> subtract : ";
+echo $myCalc->subtract();
+echo "<br> multiply : ";
+echo $myCalc->multiply();
+echo "<br> divide : ";
+echo $myCalc->divide();
+echo "<br>";
+?>
