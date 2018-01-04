@@ -33,7 +33,7 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-$sql = "INSERT INTO ".$database." (log_time, log_ipaddr, log_port, log_subd)
+$sql = "INSERT INTO ".$logdb." (log_time, log_ipaddr, log_port, log_subd)
 VALUES ('".$gm_date."', '".$s_remaddr."', '".$s_remport."', '".$subdomainname."');";
 
 if ($conn->query($sql) === TRUE) {
