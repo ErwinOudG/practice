@@ -17,18 +17,20 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-$sql = ("SELECT itemname
+$sql = ("SELECT itemname, itemid
         FROM $dbmenuitem
         WHERE menuid = 2
         ORDER BY itemorder")
         ;
 $result = $conn->query($sql);
-
+print_r($result);
+echo '<br>';
+$i = 0;
 // fill array with items fom database
 while( $row = $result->fetch_assoc() ) {
-    foreach( $row  AS $value ) {
-        $ar_menuitemname[] = $value;
-    }
+  $ar_menuitemname[$i] = $row['itemname'];
+  $ar_itemnum[$i] = $row['itemid'];
+  $i++;
 }
 // close database
 mysqli_close($conn);
@@ -53,8 +55,10 @@ if ($arrlength>0) {
         echo '<br><p class="cl_centre">';
         echo 'Erwin '.$ar_menuitemname[$x];
         echo '</p><br>';
-        $filetest = "./php/$ar_menuitemname[$x].php";
+        $filetest = "./php/mitem$ar_itemnum[$x].php";
+        // $filetest = "./php/$ar_menuitemname[$x].php";
         console_log($filetest);
+        echo '<br>';
         if (file_exists($filetest)) {
           echo '<br><p>';
           include($filetest);
