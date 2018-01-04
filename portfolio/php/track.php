@@ -1,8 +1,11 @@
 <?php
+
 if(!isset($_SESSION)){
   session_start();
 }
-include "./php/dbvars.php";
+// include "./php/dbvars.php";
+require_once("./php/dbvars.php");
+require_once("./php/funclib.php");
 $subdomainname = "erwin";
 $gm_date = gmdate("Y m d h:i:s");
 $s_remaddr = $_SERVER['REMOTE_ADDR'];
@@ -37,9 +40,9 @@ $sql = "INSERT INTO ".$logdb." (log_time, log_ipaddr, log_port, log_subd)
 VALUES ('".$gm_date."', '".$s_remaddr."', '".$s_remport."', '".$subdomainname."');";
 
 if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
+    console_log("New record created successfully");
 } else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+    console_log("Error: " . $sql . "<br>" . $conn->error);
 }
 
 

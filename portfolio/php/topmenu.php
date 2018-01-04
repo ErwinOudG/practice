@@ -23,7 +23,7 @@ $sql = ("SELECT itemname, itemid
         ORDER BY itemorder")
         ;
 $result = $conn->query($sql);
-print_r($result);
+console_log($result);
 echo '<br>';
 $i = 0;
 // fill array with items fom database
@@ -36,21 +36,21 @@ while( $row = $result->fetch_assoc() ) {
 mysqli_close($conn);
 
 
-echo '<nav class="cl_topmenu cl_centre"><ul class="cl_topmenu">';
+echo '<nav id="topmenu" class="cl_topmenu cl_centre"><ul class="cl_topmenu">';
 
 // generate menu from Array
 $arrlength=count($ar_menuitemname);
 if ($arrlength>0) {
     for($x=0;$x<$arrlength;$x++)
     {
-        echo '<li><a href="#id'.$ar_menuitemname[$x].'">'.$ar_menuitemname[$x].'</a></li>';
+        echo '<li><a href="#id'.$ar_itemnum[$x].'">'.$ar_menuitemname[$x].'</a></li>';
     }
     echo '</ul></nav>';
 // generate div's from array
     for($x=0;$x<$arrlength;$x++)
     {
       // $menucontent = "&lt?php include('pw.php'); ?&gt";
-        echo '<div id="id'.$ar_menuitemname[$x]. '" class="cl_title_mid">';
+        echo '<div id="id'.$ar_itemnum[$x]. '" class="cl_title_mid">';
         echo $ar_menuitemname[$x];
         echo '<br><p class="cl_centre">';
         echo 'Erwin '.$ar_menuitemname[$x];

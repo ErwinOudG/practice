@@ -4,8 +4,24 @@
     padding: 0;
     text-decoration: none;
 }
+
+.topmenu {
+  /*grid-area: header;*/
+}
+
+.id1 .id2 .id3 .id4 .id5 .id6{
+  /*grid-area: main;*/
+}
+
 body {
-    background-image: url("../img/pattern.jpg");
+  background-image: url("../img/pattern.jpg");
+  /*display: grid;
+  grid-template-columns: 40px 50px auto 50px 40px;
+  grid-template-rows: 25% 100px auto;
+  grid-template-areas:
+  "header header header header header"
+  "n n main n n"
+  "footer footer footer footer";*/
 }
 
 ul {
@@ -107,7 +123,6 @@ input[type=password] {
 .cl_no_bullets {
   list-style-type: none;
 }
-
 .cl_centre {
   text-align: center;
 }
