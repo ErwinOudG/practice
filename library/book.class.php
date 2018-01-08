@@ -16,7 +16,7 @@ class Book
     $this->bookContent = $content;
   }
   public function content() {
-    return $this->bookContent
+    return $this->bookContent;
   }
 
 }

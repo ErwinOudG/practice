@@ -5,21 +5,17 @@ include_once("./book.class.php")
 //
 class Library
 {
-  protected $countbookinlib = 0;
   protected $librarybooks;
 
   function __construct($ar_book) {
-    $this->$countbooksinlib = count($ar_book);
     $this->librarybooks = $ar_book;
   }
 
   public function add($book) {
-    $this->$countbooksinlib++;
     array_push($this->librarybooks,$book);
   }
 
   public function remove($book) {
-    $this->$countbooksinlib--;
     return "removed";
 
   }
@@ -28,11 +24,11 @@ class Library
   }
 
   public function count() {
-    return $this->countbooksinlib;
+    return count($this->librarybooks);
   }
 
   public function read($booknumber) {
-    return $this->ar_book[$booknumber];
+    return $this->librarybooks[$booknumber];
   }
 
 }
