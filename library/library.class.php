@@ -20,8 +20,9 @@ class Library
       }
     }
     array_push($this->librarybooks,$book);
-    $result = $book->title();
-    return "Book '$result' added";
+    $tresult = $book->title();
+    $aresult = $book->author();
+    return "Book '$tresult' written by '$aresult' added";
   }
 
   public function remove($book) {
